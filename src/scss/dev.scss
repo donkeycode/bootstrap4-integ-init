@@ -1,0 +1,29 @@
+@import "variables";
+
+@import "../../bower_components/bootstrap/scss/_variables.scss";
+@import "mixins";
+
+.dev--debug-responsive {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+    color: white;
+    &:after {
+        min-width: 400px;
+        content: "";
+        padding: 10px 20px;
+        @include breakpoint(desktop) {
+            content: "desktop - min width #{map-get($grid-breakpoints, md)}";
+            background: red;
+        }
+        @include breakpoint(only-tablet) {
+            content: "only-tablet - width between #{map-get($grid-breakpoints, lg)} and #{map-get($grid-breakpoints, md)} (ou tablet min-width #{map-get($grid-breakpoints, md)})";
+            background: green;
+        }
+        @include breakpoint(phone) {
+            content: "mobile - width max #{map-get($grid-breakpoints, sm)} ";
+            background: blue;
+        }
+    }
+}

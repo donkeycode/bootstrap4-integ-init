@@ -1,0 +1,15 @@
+
+@import "variables";
+
+@import "../../bower_components/bootstrap/scss/bootstrap.scss";
+@import "../../bower_components/components-font-awesome/scss/font-awesome.scss";
+
+@import "mixins";
+
+@import "./common/text";
+
+
+body {
+  font-family: $font-family-default;
+  background: $background-default;
+}
